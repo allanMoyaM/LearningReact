@@ -66,26 +66,24 @@ togglePersonsHandler = () => {
               changed = {(event) => this.nameChangedHandler(event, person.id)}
             />
           })}
-          
         </div>
       );
-      btnClass = classes.red;
+      btnClass = classes.Red;
+     
     }
 
     let assignedClasses = [];
     
     if(this.state.persons.length <= 1){
-      assignedClasses.push('red');
-      assignedClasses.push('bold');// classes = ['red',bold']
+      assignedClasses.push(classes.Red);
     }
-
 
     return (
       <div className={classes.App}>
         <h1>Hi, I'm a React App</h1>
         <p className={assignedClasses.join(' ')}>This is really working</p>
         <button 
-        className={classes.App}
+        className={btnClass}
         onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
